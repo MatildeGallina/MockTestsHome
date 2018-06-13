@@ -9,14 +9,14 @@ namespace ParkingArea
         public Uscita(DateTime orarioAperture, DateTime orarioChiusura)
             : base()
         {
-            this.veicoli = veicoli;
+            this.veicoli = new List<Veicolo>();
             this.Tariffa = Tariffa;
         }
 
         public List<Veicolo> veicoli { get; set; }
         public decimal Tariffa { get; set; }
 
-        public event Action<string> NowPaid;
+        public event Action<Uscita> NowPaid;
 
         public void RiceveMacchina(string targa, DateTime orarioEntrata)
         {
@@ -54,7 +54,9 @@ namespace ParkingArea
                     while (v.Tariffa > 0)
                         v.Tariffa -= Money;
 
-                    NowPaid.Invoke(v.Targa);
+                    Sbarra s = new Sbarra();
+
+                    NowPaid += s.CarTriesToPass;
 
                     veicoli.Remove(v);
                     PostiDisponibili++;

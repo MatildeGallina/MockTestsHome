@@ -12,6 +12,6 @@ namespace ParkingArea
 
         void Pagamento(decimal Money, string targa);
 
-        event Action<string> NowPaid;
+        event Action<Uscita> NowPaid;
     }
 }

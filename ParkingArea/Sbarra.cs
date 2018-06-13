@@ -15,11 +15,13 @@ namespace ParkingArea
 
         public event Action<Sbarra> ChiusuraSbarra;
 
-        public void CarTriesToPass(string targa)
+        public void CarTriesToPass(Uscita s)
         {
             if (Open is false)
             {
                 Open = true;
+
+                ChiusuraSbarra += VeicoloUscito;
             }
             else
                 throw new ArgumentException();

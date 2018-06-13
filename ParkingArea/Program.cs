@@ -23,13 +23,8 @@ namespace ParkingArea
             u.UscitaECosto("QWE123", orarioU);
 
             u.Pagamento(0.20M, "QWE123");
-            
 
-            u.NowPaid("QWE123") += s.CarTriesToPass("QWE123");
-
-            s.ChiusuraSbarra += s.VeicoloUscito;
-
-
+            Console.Read();
         }
     }
 }
