@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ParkingArea.Tests
 {
-    class TestIngresso
+    [TestClass]
+    public class TestIngresso
     {
+        [TestMethod]
+        public void TestMethod1()
+        {
+        }
     }
 }
